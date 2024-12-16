@@ -1,9 +1,8 @@
-import express from 'express'
+import express from "express";
+import indexController from "../controllers/indexController";
 
-const router = express.Router()
+const router = express.Router();
 
-router.get('/', (req, res) => {
-    res.send('Hello World!')
-})
+router.get("/", indexController.home);
 
-export default router
+export default router;
