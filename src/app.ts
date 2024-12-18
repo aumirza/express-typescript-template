@@ -2,6 +2,7 @@ import express from "express";
 import logger from "morgan";
 import cors from "cors";
 import createError from "http-errors";
+// import swaggerUi from "swagger-ui-express";
 
 import { corsOptions } from "./config/cors";
 import router from "./routes";
@@ -29,6 +30,9 @@ app.use(cors(corsOptions)); // Enable CORS
 
 // Attaching routers
 app.use(router);
+
+// app.use("/api/v1/", router);
+// app.use('/', swaggerUi.serve, swaggerUi.setup(specs, { explorer: true }))
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
