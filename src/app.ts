@@ -3,7 +3,9 @@ import logger from "morgan";
 import cors from "cors";
 import createError from "http-errors";
 // import swaggerUi from "swagger-ui-express";
+// import cookieParser from "cookie-parser";
 
+// import { APP_SECRET } from "./config";
 import { corsOptions } from "./config/cors";
 import router from "./routes";
 import { errorHandler } from "./middlewares/errorHandler";
@@ -15,6 +17,7 @@ app.use(logger("dev")); // Log requests to console
 app.use(express.json()); // Parse JSON from the request body
 app.use(express.urlencoded({ extended: true })); // Parse URL-encoded bodies
 app.use(cors(corsOptions)); // Enable CORS
+// app.use(cookieParser(APP_SECRET)); // Parse cookies
 
 // app.use(express.static("public"));
 
